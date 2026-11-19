@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eceffa">
+<title>Tu bachillerato paso a paso · Universidad Andina del Cusco</title>
+<meta name="description" content="Guía interactiva del proceso de bachillerato en la Universidad Andina del Cusco: fases, responsables, plazos y documentos de ejemplo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eceffa;--ink:#0d1020;--dim:#4b5268;--glass:rgba(255,255,255,.58);--edge:rgba(255,255,255,.95);
+  --academico:#5b6cff;--herramientas:#0fa57e;--eventos:#f0476f;--personal:#e8920c;
+  --al:#9b1c31;--fa:#1f5fa8;--un:#7a4fb0;--au:#b86b00;--gt:#1f7a4d;--su:#2b2f3a;
+  --display:'Unbounded','Segoe UI',system-ui,sans-serif;
+  --body:'Sora',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:1.5rem}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.55;min-height:100vh;min-height:100dvh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--academico);outline-offset:3px;border-radius:10px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* Fondo: orbes iridiscentes */
+.orbs{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.75;will-change:transform;animation:drift 22s ease-in-out infinite alternate}
+.o1{width:46vmax;height:46vmax;background:#ffb3d4;left:-12vmax;top:-14vmax}
+.o2{width:42vmax;height:42vmax;background:#aebdff;right:-14vmax;top:8vmax;animation-delay:-7s}
+.o3{width:38vmax;height:38vmax;background:#b9f3d6;left:18vmax;bottom:-18vmax;animation-delay:-13s}
+.o4{width:26vmax;height:26vmax;background:#ffe0a3;right:6vmax;bottom:-8vmax;animation-delay:-4s}
+@keyframes drift{to{transform:translate3d(6vmax,4vmax,0) scale(1.15)}}
+
+.wrap{max-width:1180px;margin:0 auto;padding:clamp(2rem,6vw,4.5rem) clamp(1rem,4vw,2rem) 9rem}
+
+/* Header */
+header{margin-bottom:clamp(2rem,5vw,3.5rem);animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+.live{display:inline-flex;align-items:center;gap:.55rem;padding:.4rem .95rem;border-radius:99px;background:var(--glass);border:1px solid var(--edge);font-size:.85rem;font-weight:500;color:var(--dim);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--herramientas);box-shadow:0 0 0 0 rgba(15,165,126,.5);animation:ping 2.4s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 9px rgba(15,165,126,0)}100%{box-shadow:0 0 0 0 rgba(15,165,126,0)}}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,8vw,5.5rem);line-height:.95;letter-spacing:-.045em;margin:1.2rem 0 1rem;
+  background:linear-gradient(100deg,var(--ink) 20%,#5b6cff 55%,#f0476f 85%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 9s ease-in-out infinite alternate}
+@keyframes sheen{to{background-position:100% 0}}
+.lead{max-width:60ch;color:var(--dim);font-size:clamp(1rem,2vw,1.15rem)}
+.lead b{color:var(--ink);font-weight:600}
+
+/* Layout */
+.layout{max-width:1180px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 8rem;display:grid;grid-template-columns:170px 1fr;gap:24px}
+
+/* Rail de avance */
+.rail{position:sticky;top:1.5rem;height:calc(100vh - 3rem);min-height:420px;animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
+.rail .tk{position:absolute;left:12px;top:36px;bottom:8px;width:8px;border-radius:8px;background:rgba(13,16,32,.08)}
+.rail #fill{position:absolute;left:0;top:0;width:100%;height:0;background:linear-gradient(var(--personal),var(--herramientas));border-radius:8px;transition:height .5s}
+.rail #pt{font-family:var(--display);font-weight:500;font-size:.8rem;color:var(--academico);margin-bottom:.4rem}
+.dot{position:absolute;left:-3px;width:18px;height:18px;border-radius:50%;background:var(--glass);border:3px solid rgba(13,16,32,.15);padding:0;transform:translateY(-50%);cursor:pointer;backdrop-filter:blur(6px);transition:border-color .25s,background .25s}
+.dot.on{border-color:var(--herramientas);background:var(--herramientas)}
+.dot.cur{border-color:var(--personal);box-shadow:0 0 0 4px color-mix(in srgb,var(--personal) 35%,transparent)}
+.pl{position:absolute;left:30px;font-family:var(--display);font-weight:500;font-size:.68rem;line-height:1.2;color:var(--dim);width:115px;transform:translateY(-50%);text-transform:uppercase;letter-spacing:.02em}
+@media (max-width:780px){
+  .layout{display:block;padding-right:34px}
+  .rail{position:fixed;right:6px;top:12px;bottom:12px;height:auto;min-height:0;width:20px;z-index:9}
+  .rail .tk{left:6px;top:0}.pl,.rail #pt{display:none}
+  .dot{left:-3px;width:14px;height:14px;border-width:2px}
+}
+
+/* Cajas informativas */
+.box{border-radius:20px;padding:1rem 1.2rem;margin:1rem 0;border:1px solid var(--edge);background:var(--glass);display:flex;gap:.85rem;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 #fff inset,0 10px 30px -18px rgba(40,50,110,.3)}
+.box b{display:block;font-family:var(--display);font-weight:500;font-size:.95rem;margin-bottom:.15rem}
+.box.w{border-left:5px solid var(--personal)}
+.box.g{border-left:5px solid var(--herramientas)}
+.box.i{border-left:5px solid var(--academico)}
+.box span{font-size:1.4rem;line-height:1}
+.box p{color:var(--dim);font-size:.92rem}
+
+/* Fases */
+.phase{font-family:var(--display);font-weight:700;margin:2rem 0 .9rem;color:var(--ink);text-transform:uppercase;letter-spacing:.03em;font-size:.82rem;border-bottom:3px solid var(--personal);display:inline-block;padding-bottom:.2rem}
+
+/* Timeline de pasos */
+.tl{position:relative;margin:0;padding:0;list-style:none}
+.tl:before{content:"";position:absolute;left:24px;top:0;bottom:0;width:3px;background:rgba(13,16,32,.08);border-radius:4px}
+.st{position:relative;padding-left:64px;margin:0 0 .8rem}
+.ic{position:absolute;left:0;top:6px;width:50px;height:50px;border-radius:50%;background:var(--glass);border:3px solid var(--c);display:grid;place-items:center;font-size:1.4rem;backdrop-filter:blur(8px);box-shadow:0 6px 18px -10px var(--c);transition:background .3s,border-color .3s}
+.st.done .ic{background:var(--herramientas);border-color:var(--herramientas)}
+.st.now .ic{box-shadow:0 0 0 6px color-mix(in srgb,var(--personal) 40%,transparent);border-color:var(--personal)}
+.hd{width:100%;text-align:left;background:var(--glass);color:var(--ink);border:1px solid var(--edge);border-radius:22px;padding:.85rem 1.1rem;font:inherit;cursor:pointer;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 #fff inset,0 8px 24px -16px rgba(40,50,110,.3);transition:box-shadow .3s,border-color .3s;position:relative}
+.hd:hover{box-shadow:0 1px 0 #fff inset,0 18px 40px -18px var(--c)}
+.st.now .hd{border:2px solid var(--personal)}
+.n{font-size:.72rem;color:var(--dim);font-weight:500}
+.who{display:inline-block;font-size:.66rem;font-weight:600;padding:.15rem .55rem;border-radius:99px;color:#fff;background:var(--c);margin:0 6px 0 4px;letter-spacing:.02em}
+.t{font-family:var(--display);font-weight:500;display:block;margin-top:.25rem;color:var(--ink);font-size:.98rem;line-height:1.25;letter-spacing:-.01em}
+.s{color:var(--dim);font-size:.9rem;display:block;margin-top:.1rem}
+.hint,.chip{font-size:.76rem;color:var(--academico);margin-top:.25rem;display:inline-block;margin-right:10px;font-weight:600}
+.chip{color:var(--un);border-bottom:1px dotted var(--un);cursor:pointer}
+.more{display:none;margin:.4rem 0 0;padding:.9rem .6rem .9rem 1rem;background:var(--glass);border:1px dashed rgba(13,16,32,.15);border-radius:18px;backdrop-filter:blur(10px);overflow-x:auto}
+.st.open .more{display:block}
+.h{overflow-x:auto;padding:6px 0 10px}
+[data-ex]{cursor:help}
+
+/* Diagramas de subpasos (zigzag) */
+.s1{display:flex}
+.sg{flex:1 1 150px;min-width:150px;display:grid;grid-template-rows:165px 30px 165px;text-align:center}
+.z{display:flex;flex-direction:column;align-items:center;padding:0 8px}
+.zt{justify-content:flex-end}.zb{justify-content:flex-start}
+.br{position:relative}.br i{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px rgba(13,16,32,.1)}
+.stm{width:3px;height:34px;flex:none;border-radius:2px}
+.cc{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;flex:none;background:var(--glass);border:2px solid currentColor;backdrop-filter:blur(6px)}
+.tx{font-size:.76rem;color:var(--dim);line-height:1.35;display:flex;flex-direction:column}
+.zt .tx{flex-direction:column-reverse}
+.tx b{font-family:var(--display);font-weight:500;font-size:.9rem}
+
+/* Diagrama de carriles */
+.s2{min-width:760px}
+.cr,.bw{display:flex;gap:6px}
+.cr{padding-right:44px;margin:6px 0}
+.rw{flex-direction:row-reverse}
+.mid{position:relative;padding-right:44px}
+.bw+.bw{margin-top:38px}
+.ar{flex:1;height:38px;line-height:38px;text-align:center;color:#fff;font-family:var(--display);font-weight:500;font-size:.85rem;text-shadow:0 1px 2px rgba(0,0,0,.35);clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%,14px 50%)}
+.ar.rv{clip-path:polygon(14px 0,100% 0,calc(100% - 14px) 50%,100% 100%,14px 100%,0 50%)}
+.tn{position:absolute;right:0;top:0;width:56px;height:114px;background:linear-gradient(var(--c1),var(--c2));border-radius:0 57px 57px 0;opacity:.9}
+.tn:after{content:"";position:absolute;left:0;top:38px;width:18px;height:38px;border-radius:0 19px 19px 0;background:var(--bg)}
+.cd{flex:1 1 0;min-width:0;background:var(--glass);border:1px solid var(--edge);border-radius:14px;padding:.6rem .5rem;font-size:.72rem;line-height:1.35;color:var(--dim);text-align:center;backdrop-filter:blur(8px);box-shadow:0 1px 0 #fff inset}
+.cc2{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;margin:0 auto .35rem;font-size:.95rem;color:#fff}
+.cd b{display:block;font-family:var(--display);font-weight:500;font-size:.76rem;color:var(--ink)}
+.fin{text-align:center;margin-top:2.5rem;font-family:var(--display);font-weight:500;font-size:1.05rem;color:var(--ink);padding:1.2rem;border-radius:22px;background:var(--glass);border:1px solid var(--edge);backdrop-filter:blur(14px)}
+
+/* Popover de documentos de ejemplo */
+#pop{position:fixed;z-index:50;width:min(310px,calc(100vw - 24px));display:none;pointer-events:none;filter:drop-shadow(0 8px 20px rgba(0,0,0,.35))}
+.doc{position:relative;overflow:hidden;background:#fffdf7;color:#222;border:1px solid #c9b982;border-top:6px solid var(--academico);border-radius:12px;padding:12px 14px;font-size:.74rem;line-height:1.45}
+.doc .dh{display:block;text-align:center;font-family:var(--display);font-weight:500;font-size:.78rem;color:var(--academico);margin-bottom:.3rem}
+.doc .wm{position:absolute;right:-16px;top:40%;transform:rotate(-20deg);font-family:var(--display);font-weight:700;font-size:2rem;color:rgba(91,108,255,.1)}
+.doc u{text-decoration:none;border-bottom:1px solid #888;padding:0 14px}
+.doc .nt{margin-top:8px;font-size:.66rem;color:#777;border-top:1px dashed #ccc;padding-top:4px}
+.ph{width:64px;height:80px;background:#fff;border:1px solid #bbb;margin:6px auto;display:grid;place-items:center;font-size:2rem;border-radius:6px}
+
+/* Footer */
+footer{margin-top:3rem;color:var(--dim);font-size:.9rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+footer a{color:var(--ink);font-weight:600;text-underline-offset:4px}
+</style>
+</head>
+<body>
+<a class="skip sr" href="#root">Saltar a los pasos</a>
+<div class="orbs" aria-hidden="true"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="orb o4"></div></div>
+
+<div class="wrap">
+  <header>
+    <span class="live"><i></i>Guía interactiva · 20 escuelas profesionales</span>
+    <h1>Tu bachillerato,<br>paso a paso</h1>
+    <p class="lead">Universidad Andina del Cusco · Guía para alumnos, padres y apoderados. Toca un paso para ver qué ocurre por dentro; se marcará como tu paso actual y la barra lateral avanzará. Pasa el mouse (o toca) sobre los textos morados <b>“👁 Ver ejemplo”</b> para ver cómo es el documento que recibirás.</p>
+  </header>
+</div>
+
+<div class="layout">
+<aside class="rail" aria-label="Tu avance"><div id="pt">Avance</div><div class="tk"><i id="fill"></i></div></aside>
+<main>
+<div class="box i"><span>💡</span><div><b>¿Cómo usar esta guía?</b><p>Toca un paso para ver qué ocurre por dentro; se marcará como tu paso actual y la barra lateral avanzará. Pasa el mouse (o toca) sobre los textos morados “👁 Ver ejemplo” para ver cómo es el documento que recibirás.</p></div></div>
+<div id="root"></div>
+<div class="fin">🎉 ¡Listo! Ya eres bachiller y puedes continuar con tu título profesional.</div>
+<footer>
+  <span>© 2026 Oppwa · Guía UAC</span>
+  </footer>
+</main></div>
+<div id="pop" role="tooltip"></div>
+
+<script>
+const C={al:"#9b1c31",fa:"#1f5fa8",un:"#7a4fb0",au:"#b86b00",gt:"#1f7a4d",su:"#2b2f3a"};
+const D=(h,b)=>'<div class="doc"><div class="wm">EJEMPLO</div><b class="dh">'+h+'</b>'+b+'<div class="nt">Ejemplo referencial: el formato real puede variar un poco.</div></div>';
+const EX={
+foto:D("FOTOGRAFÍA PARA TU DIPLOMA",'<div class="ph">🧑‍💼</div>Fondo blanco · terno oscuro · formato JPG · rostro despejado.'),
+cmat:D("CONSTANCIA DE PRIMERA MATRÍCULA",'Se hace constar que <u>Apellidos y nombres</u>, código <u>000000</u>, de la Escuela Profesional de <u>————</u>, realizó su primera matrícula el <u>dd/mm/aaaa</u>.<br>Cusco, <u>__</u> de <u>____</u> de 2026.'),
+ceg:D("CONSTANCIA DE EGRESADO",'Se hace constar que <u>Apellidos y nombres</u>, código <u>000000</u>, concluyó sus estudios el <u>dd/mm/aaaa</u>, con <u>000</u> créditos aprobados.<br>Cusco, <u>__</u> de <u>____</u> de 2026.'),
+apto:D("RESOLUCIÓN DE DECLARACIÓN DE APTO",'<b>RESOLUCIÓN N.° ___-2026</b><br>VISTO el expediente de <u>Apellidos y nombres</u>…<br>SE RESUELVE: Declarar <b>APTO</b> para optar el grado académico de Bachiller.'),
+rcf:D("RESOLUCIÓN DE CONSEJO DE FACULTAD",'<b>RESOLUCIÓN N.° ___-2026-CF</b><br>Sesión del <u>dd/mm/aaaa</u>.<br>SE RESUELVE: Aprobar la propuesta de otorgamiento del grado de <b>Bachiller en <u>————</u></b> a <u>Apellidos y nombres</u>.'),
+rcu:D("RESOLUCIÓN DE CONSEJO UNIVERSITARIO",'<b>RESOLUCIÓN N.° ___-2026-CU-UAC</b><br>VISTO… CONSIDERANDO…<br>SE RESUELVE: <b>Otorgar</b> el grado académico de <b>BACHILLER EN <u>————</u></b> a <u>Apellidos y nombres</u>.<br><i>Firmado digitalmente por el Rector</i> ✍️'),
+mail:D("CORREO QUE RECIBIRÁS",'<b>De:</b> Oficina de Grados y Títulos<br><b>Asunto:</b> Resolución de Consejo Universitario<br>Estimado(a) alumno(a): adjuntamos su resolución firmada digitalmente.<br>📎 Resolucion_CU.pdf<br><i>Revisa también tu bandeja de spam.</i>'),
+dip:D("DIPLOMA DE BACHILLER",'<div style="text-align:center">UNIVERSIDAD ANDINA DEL CUSCO<br>confiere el grado académico de<br><b style="font-size:.9rem">BACHILLER EN <u>————</u></b><br>a <u>Apellidos y nombres</u><br>Diploma N.° <u>___</u> · Código <u>___</u></div><div style="display:flex;justify-content:space-between;margin-top:10px;font-size:.62rem"><span>Decano(a)</span><span>Sec. General</span><span>Rector</span></div>'),
+ofi:D("OFICIO A SUNEDU",'<b>OFICIO N.° ___-2026-SG</b><br>Asunto: Remite padrón y diplomas para registro.<br>Adjuntos: 1) Padrón de expedientes · 2) Diplomas escaneados.<br>Firmado por la Secretaría General.'),
+erp:D("ERP · CONDICIÓN DEL ALUMNO",'Alumno: <u>Apellidos y nombres</u><br>Condición: <s>EGRESANTE</s> → <b style="color:#1f8a55">BACHILLER ✔</b><br>Observaciones: ninguna<br>Registro SUNEDU: <b>registrado</b>')};
+const P=[
+["Fase 1 · Tu solicitud y los requisitos",null,[
+["📝","al","ALUMNO","Solicitas el bachillerato","Inicias el trámite.",[]],
+["📷","al","ALUMNO","Subes tu fotografía","Fondo blanco, terno oscuro, formato JPG.",[],"foto"],
+["🌐","un","CENTRO DE IDIOMAS","Validan tu idioma","Idioma extranjero o lengua nativa.",[]],
+["💰","un","UNIDAD DE TESORERÍA","Revisan deudas económicas","Validan que no tengas deuda.",[]],
+["🏛️","fa","DECANATO","Deuda administrativa y constancia","Validan que no tengas deuda administrativa y emiten tu constancia.",[]],
+["📄","un","PROCESOS TÉCNICOS ACADÉMICOS","Constancia de primera matrícula","Cargan el documento con la fecha de tu primera matrícula.",[],"cmat"],
+["🎒","un","PROCESOS TÉCNICOS ACADÉMICOS","Constancia de egresado","Cargan tu constancia de egresado.",[],"ceg"],
+["💻","un","CENFOTI","Certificado de tecnologías de información","Se valida en todas las escuelas, excepto Ingeniería de Sistemas.",[]],
+["🔬","fa","DECANATO","Curso de Trabajo de Investigación","Validan que lo hayas aprobado.",[]],
+["✅","fa","DECANATO","Resolución de declaración de apto","Cargan la resolución que te declara apto.",[],"apto"]]],
+["Fase 2 · Aprobaciones",["w","⏳","Sin plazo oficial por ahora","Antes de la aprobación en Consejo Universitario no existe normativa ni reglamento de SUNEDU que fije un tiempo. Depende de cada oficina y de la fecha del próximo Consejo."],[
+["📚","fa","DECANATO","Resolución de Consejo de Facultad","Verifican y cargan la resolución; envían oficio al Vicerrectorado.",["Reúne|Expedientes con todos los pasos anteriores completos","Resolución|Se verifica y se carga","Oficio|Se envía al Vicerrectorado Académico"],"rcf"],
+["🔎","au","VICERRECTORADO ACADÉMICO","Revisión del expediente","Verifican que todo esté en orden.",["Recibe|El oficio del Decanato","Revisa|Cada expediente","Todo bien|Oficio al Rectorado para pedir aprobación en Consejo","Observación|Vuelve al Decanato para corregir"]],
+["📨","au","RECTORADO","Recibe el oficio","Lo envía a Secretaría General.",["Recibe|Oficio con expedientes","Envía|A Secretaría General, para el Consejo más próximo"]],
+["🏆","au","SECRETARÍA GENERAL","Consejo Universitario aprueba","Se exponen los expedientes y se aprueban.",["Agenda|Incluyen los expedientes en la agenda","Exposición|Se exponen grados y títulos","Aprobación|Votan los consejeros","Envío|A Grados y Títulos, para resolución y formato de conformidad"]]]],
+["Fase 3 · Se prepara tu diploma",["g","⏱️","Plazo oficial: 30 días hábiles","Una vez aprobado por Consejo Universitario, la universidad tiene 30 días hábiles para emitir el diploma y enviar la información a SUNEDU."],[
+["🗂️","gt","OFICINA DE GRADOS Y TÍTULOS","Se arman los datos de tu diploma","Revisan cada documento de tu expediente (12 subpasos).",["Foto|Descargan y editan la fotografía","Convalidación|Si convalidaste se incluye; si no, eres alumno regular","Notas|Del histórico se toman los créditos alcanzados","Primera matrícula|Se toma la fecha exacta (o la de la escuela o universidad de origen si convalidaste)","Egresado|Se toma la fecha de egreso","Requisitos|Idioma, CENFOTI, investigación y apto","Consejo de Facultad|Número y fecha de la resolución","Diploma|Número y código que te corresponde","Consejo Univ.|Fecha de aprobación y de la resolución","Autoridades|Validan datos de rector, secretaria y decano","Guardado|Se valida todo y se guarda","Cierre|Pasan a firmas cuando todos los expedientes están listos"]],
+["✍️","gt","GRADOS Y TÍTULOS · RECTORADO","Resoluciones y firmas","Dos tareas en paralelo.",["Resoluciones|Se emiten y van al Rectorado para firma","Impresión|En paralelo se imprimen los diplomas físicos","Decanos|Firman en cada facultad","Secretaria general|Firma el diploma","Rector|Firma final|dip"],"dip"],
+["📧","gt","GRADOS Y TÍTULOS","Te llega la resolución por correo","Y se escanean los diplomas.",["Correo|Resolución firmada digitalmente por el rector|mail","Resolución|Así se verá tu resolución|rcu","Escaneo|Se escanean los diplomas","Portadiplomas|Se guardan y agrupan por facultad"],"mail"]]],
+["Fase 4 · SUNEDU, entrega y condición de bachiller",null,[
+["🏢","su","SECRETARÍA GENERAL → SUNEDU","Registro en SUNEDU","La universidad envía la información por mesa de partes virtual.",["Padrón|Listado de expedientes","Diplomas|Escaneados","Oficio|Firma de la secretaria general|ofi","Envío|Mesa de partes virtual","SUNEDU|10 días hábiles para registrar"],"ofi"],
+["📦","fa","DECANATO","Te citan para la entrega","Reciben los diplomas en portadiplomas y te llaman.",[]],
+["🎓","al","ALUMNO","¡Recibes tu diploma!","Recoges tu diploma de bachiller.",[],"dip"],
+["🏅","gt","OFICINA DE GRADOS Y TÍTULOS · ERP","Pasas de egresante a bachiller","Cuando SUNEDU registra tu diploma, se actualiza tu condición en el ERP.",["SUNEDU|Registra y comunica a la universidad","Verificación|Sin observaciones en tu expediente","ERP|Cambio de egresante a bachiller|erp","Después|Ya puedes solicitar el apto al título profesional"],"erp"]]]];
+const IC=[[/portad/i,"🗂️"],[/foto/i,"📷"],[/convalid/i,"🔁"],[/notas/i,"📊"],[/matr/i,"📅"],[/egres/i,"🎒"],[/requisit/i,"✅"],[/facultad/i,"🏛️"],[/oficio/i,"📨"],[/diploma/i,"📜"],[/consejo/i,"🏆"],[/autorid/i,"🖋️"],[/guard/i,"💾"],[/cierre/i,"🔒"],[/correo/i,"📧"],[/resoluc/i,"📄"],[/impres|escane/i,"🖨️"],[/decano|secretaria|rector/i,"✍️"],[/padr/i,"📋"],[/sunedu/i,"🏢"],[/env[ií]/i,"📤"],[/erp/i,"💻"],[/despu/i,"🎓"],[/reúne|agenda/i,"🗂️"],[/recibe/i,"📥"],[/revisa|verific/i,"🔎"],[/todo bien/i,"👍"],[/observ/i,"⚠️"],[/exposi/i,"🎤"],[/aprob/i,"🗳️"]];
+const ic=t=>(IC.find(r=>r[0].test(t))||[0,"⭐"])[1];
+const PAL=["#e8702a","#6fa595","#f2b705","#0a2e6e","#3a3f4b"];
+const ex=e=>e?' data-ex="'+e+'"':'',chp=e=>e?'<br><span class="chip">👁 Ver ejemplo</span>':'';
+const s1=sb=>'<div class="s1" style="min-width:'+sb.length*150+'px">'+sb.map((x,i)=>{const[a,b,e]=x.split("|"),c=PAL[i%5],up=i%2,
+ tx='<div class="tx"><b style="color:'+c+'">'+a+'</b><span>'+b+chp(e)+'</span></div>',
+ st='<div class="stm" style="background:'+c+'"></div>',cc='<div class="cc" style="color:'+c+'">'+ic(a)+'</div>';
+ return'<div class="sg"'+ex(e)+'><div class="z zt">'+(up?cc+st:tx)+'</div><div class="br" style="background:'+c+'"><i></i></div><div class="z zb">'+(up?tx:st+cc)+'</div></div>'}).join("")+'</div>';
+const s2=sb=>{const n=sb.length,h=Math.ceil(n/2),it=sb.map((x,i)=>{const[a,b,e]=x.split("|");return{a,b,e,i,c:"hsl("+Math.round(i/(n-1)*280)+" 72% 45%)"}}),A=it.slice(0,h),B=it.slice(h),pad=l=>'<div style="flex:1"></div>'.repeat(h-l.length),
+ bar=(l,r)=>l.map(o=>'<div class="ar'+(r?' rv':'')+'" style="background:'+o.c+'">'+(o.i+1)+'</div>').join("")+pad(l),
+ cds=l=>l.map(o=>'<div class="cd"'+ex(o.e)+' style="border-top:4px solid '+o.c+'"><div class="cc2" style="background:'+o.c+'">'+ic(o.a)+'</div><b>'+o.a+'</b>'+o.b+chp(o.e)+'</div>').join("")+pad(l);
+ return'<div class="s2"><div class="cr">'+cds(A)+'</div><div class="mid" style="--c1:'+A[h-1].c+';--c2:'+B[0].c+'"><div class="bw">'+bar(A,0)+'</div><div class="bw rw">'+bar(B,1)+'</div><div class="tn"></div></div><div class="cr rw">'+cds(B)+'</div></div>'};
+const root=document.getElementById("root"),rail=document.querySelector(".rail"),pop=document.getElementById("pop");let n=0,cur=-1,all=[];
+const tot=P.reduce((a,p)=>a+p[2].length,0);
+P.forEach(([ph,box,steps])=>{const d=document.createElement("div");
+ d.innerHTML='<div class="phase">'+ph+'</div>'+(box?'<div class="box '+box[0]+'"><span style="font-size:1.4rem">'+box[1]+'</span><div><b>'+box[2]+'</b>'+box[3]+'</div></div>':'');
+ const ol=document.createElement("ol");ol.className="tl";
+ steps.forEach(s=>{const i=n++;const li=document.createElement("li");li.className="st";li.style.setProperty("--c",C[s[1]]);li.id="p"+i;
+  const sb=s[5],ex=s[6];
+  li.innerHTML='<div class="ic">'+s[0]+'</div><button class="hd" aria-expanded="false"'+(ex?' data-ex="'+ex+'"':'')+'><span class="n">Paso '+(i+1)+'</span><span class="who">'+s[2]+'</span><span class="t">'+s[3]+'</span><span class="s">'+s[4]+'</span>'+(sb.length?'<span class="hint">▼ Ver detalle</span>':'')+(ex?'<span class="chip">👁 Ver ejemplo</span>':'')+'</button>'+(sb.length?'<div class="more"><div class="h">'+(sb.length>6?s2(sb):s1(sb))+'</div></div>':'');
+  li.querySelector(".hd").onclick=e=>{li.classList.toggle("open");e.currentTarget.setAttribute("aria-expanded",li.classList.contains("open"));cur=i;upd()};
+  all.push(li);ol.appendChild(li)});
+ d.appendChild(ol);root.appendChild(d)});
+let k=0;P.forEach(([ph,,st])=>{const y=k/(tot-1)*100;rail.querySelector(".tk").insertAdjacentHTML("beforeend",'<span class="pl" style="top:'+y+'%">'+ph.split("·")[0]+'</span>');k+=st.length});
+const dots=[];for(let i=0;i<tot;i++){const b=document.createElement("button");b.className="dot";b.style.top=(i/(tot-1)*100)+"%";b.title="Paso "+(i+1);b.onclick=()=>document.getElementById("p"+i).scrollIntoView({block:"center"});rail.querySelector(".tk").appendChild(b);dots.push(b)}
+function upd(){all.forEach((l,i)=>{l.classList.toggle("done",i<cur);l.classList.toggle("now",i===cur)});
+ dots.forEach((d,i)=>{d.classList.toggle("on",i<cur);d.classList.toggle("cur",i===cur)});
+ document.getElementById("fill").style.height=(cur<0?0:cur/(tot-1)*100)+"%";
+ document.getElementById("pt").textContent=cur<0?"Toca un paso":"Paso "+(cur+1)+" de "+tot}
+const show=(el,x,y)=>{pop.innerHTML=EX[el.dataset.ex];pop.style.display="block";const w=pop.offsetWidth,h=pop.offsetHeight;
+ pop.style.left=Math.max(8,Math.min(x+16,innerWidth-w-8))+"px";pop.style.top=Math.max(8,Math.min(y+16,innerHeight-h-8))+"px"};
+document.addEventListener("mouseover",e=>{const el=e.target.closest("[data-ex]");if(el)show(el,e.clientX,e.clientY)});
+document.addEventListener("mousemove",e=>{const el=e.target.closest("[data-ex]");if(el)show(el,e.clientX,e.clientY);else pop.style.display="none"});
+document.addEventListener("click",e=>{const c=e.target.closest(".chip");if(c){const el=c.closest("[data-ex]"),r=c.getBoundingClientRect();show(el,r.left,r.bottom-10);setTimeout(()=>pop.style.display="none",4500)}});
+upd();
+</script>
+</body>
+</html>
