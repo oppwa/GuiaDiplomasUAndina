@@ -12,8 +12,13 @@
 <style>
 :root{
   --bg:#eceffa;--ink:#0d1020;--dim:#4b5268;--glass:rgba(255,255,255,.58);--edge:rgba(255,255,255,.95);
-  --academico:#5b6cff;--herramientas:#0fa57e;--eventos:#f0476f;--personal:#e8920c;
-  --al:#9b1c31;--fa:#1f5fa8;--un:#7a4fb0;--au:#b86b00;--gt:#1f7a4d;--su:#2b2f3a;
+  /* Paleta solicitada */
+  --rosa:#FF6384;--azul:#36A2EB;--amarillo:#FFCE56;--turquesa:#4BC0C0;
+  --purpura:#9966FF;--naranja:#FF9F40;--gris:#C9CBCF;
+  /* Roles */
+  --academico:var(--azul);--herramientas:var(--turquesa);--eventos:var(--rosa);--personal:var(--purpura);
+  /* Colores por área / responsable (C) */
+  --al:var(--rosa);--fa:var(--azul);--un:var(--purpura);--au:var(--naranja);--gt:var(--turquesa);--su:var(--gris);
   --display:'Unbounded','Segoe UI',system-ui,sans-serif;
   --body:'Sora',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
 }
@@ -24,13 +29,13 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1
 :focus-visible{outline:3px solid var(--academico);outline-offset:3px;border-radius:10px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 
-/* Fondo: orbes iridiscentes */
+/* Fondo: orbes con la nueva paleta */
 .orbs{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.75;will-change:transform;animation:drift 22s ease-in-out infinite alternate}
-.o1{width:46vmax;height:46vmax;background:#ffb3d4;left:-12vmax;top:-14vmax}
-.o2{width:42vmax;height:42vmax;background:#aebdff;right:-14vmax;top:8vmax;animation-delay:-7s}
-.o3{width:38vmax;height:38vmax;background:#b9f3d6;left:18vmax;bottom:-18vmax;animation-delay:-13s}
-.o4{width:26vmax;height:26vmax;background:#ffe0a3;right:6vmax;bottom:-8vmax;animation-delay:-4s}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.72;will-change:transform;animation:drift 22s ease-in-out infinite alternate}
+.o1{width:46vmax;height:46vmax;background:#FF6384;left:-12vmax;top:-14vmax}
+.o2{width:42vmax;height:42vmax;background:#36A2EB;right:-14vmax;top:8vmax;animation-delay:-7s}
+.o3{width:38vmax;height:38vmax;background:#4BC0C0;left:18vmax;bottom:-18vmax;animation-delay:-13s}
+.o4{width:26vmax;height:26vmax;background:#FFCE56;right:6vmax;bottom:-8vmax;animation-delay:-4s}
 @keyframes drift{to{transform:translate3d(6vmax,4vmax,0) scale(1.15)}}
 
 .wrap{max-width:1180px;margin:0 auto;padding:clamp(2rem,6vw,4.5rem) clamp(1rem,4vw,2rem) 9rem}
@@ -39,10 +44,10 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1
 header{margin-bottom:clamp(2rem,5vw,3.5rem);animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(24px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
 .live{display:inline-flex;align-items:center;gap:.55rem;padding:.4rem .95rem;border-radius:99px;background:var(--glass);border:1px solid var(--edge);font-size:.85rem;font-weight:500;color:var(--dim);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.live i{width:8px;height:8px;border-radius:50%;background:var(--herramientas);box-shadow:0 0 0 0 rgba(15,165,126,.5);animation:ping 2.4s infinite}
-@keyframes ping{70%{box-shadow:0 0 0 9px rgba(15,165,126,0)}100%{box-shadow:0 0 0 0 rgba(15,165,126,0)}}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--turquesa);box-shadow:0 0 0 0 rgba(75,192,192,.5);animation:ping 2.4s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 9px rgba(75,192,192,0)}100%{box-shadow:0 0 0 0 rgba(75,192,192,0)}}
 h1{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,8vw,5.5rem);line-height:.95;letter-spacing:-.045em;margin:1.2rem 0 1rem;
-  background:linear-gradient(100deg,var(--ink) 20%,#5b6cff 55%,#f0476f 85%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 9s ease-in-out infinite alternate}
+  background:linear-gradient(100deg,var(--ink) 15%,#36A2EB 50%,#FF6384 85%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 9s ease-in-out infinite alternate}
 @keyframes sheen{to{background-position:100% 0}}
 .lead{max-width:60ch;color:var(--dim);font-size:clamp(1rem,2vw,1.15rem)}
 .lead b{color:var(--ink);font-weight:600}
@@ -53,11 +58,11 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,8vw,5.5rem)
 /* Rail de avance */
 .rail{position:sticky;top:1.5rem;height:calc(100vh - 3rem);min-height:420px;animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
 .rail .tk{position:absolute;left:12px;top:36px;bottom:8px;width:8px;border-radius:8px;background:rgba(13,16,32,.08)}
-.rail #fill{position:absolute;left:0;top:0;width:100%;height:0;background:linear-gradient(var(--personal),var(--herramientas));border-radius:8px;transition:height .5s}
-.rail #pt{font-family:var(--display);font-weight:500;font-size:.8rem;color:var(--academico);margin-bottom:.4rem}
+.rail #fill{position:absolute;left:0;top:0;width:100%;height:0;background:linear-gradient(var(--rosa),var(--turquesa));border-radius:8px;transition:height .5s}
+.rail #pt{font-family:var(--display);font-weight:500;font-size:.8rem;color:var(--azul);margin-bottom:.4rem}
 .dot{position:absolute;left:-3px;width:18px;height:18px;border-radius:50%;background:var(--glass);border:3px solid rgba(13,16,32,.15);padding:0;transform:translateY(-50%);cursor:pointer;backdrop-filter:blur(6px);transition:border-color .25s,background .25s}
-.dot.on{border-color:var(--herramientas);background:var(--herramientas)}
-.dot.cur{border-color:var(--personal);box-shadow:0 0 0 4px color-mix(in srgb,var(--personal) 35%,transparent)}
+.dot.on{border-color:var(--turquesa);background:var(--turquesa)}
+.dot.cur{border-color:var(--rosa);box-shadow:0 0 0 4px color-mix(in srgb,var(--rosa) 35%,transparent)}
 .pl{position:absolute;left:30px;font-family:var(--display);font-weight:500;font-size:.68rem;line-height:1.2;color:var(--dim);width:115px;transform:translateY(-50%);text-transform:uppercase;letter-spacing:.02em}
 @media (max-width:780px){
   .layout{display:block;padding-right:34px}
@@ -69,31 +74,31 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,8vw,5.5rem)
 /* Cajas informativas */
 .box{border-radius:20px;padding:1rem 1.2rem;margin:1rem 0;border:1px solid var(--edge);background:var(--glass);display:flex;gap:.85rem;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 #fff inset,0 10px 30px -18px rgba(40,50,110,.3)}
 .box b{display:block;font-family:var(--display);font-weight:500;font-size:.95rem;margin-bottom:.15rem}
-.box.w{border-left:5px solid var(--personal)}
-.box.g{border-left:5px solid var(--herramientas)}
-.box.i{border-left:5px solid var(--academico)}
+.box.w{border-left:5px solid var(--amarillo)}
+.box.g{border-left:5px solid var(--turquesa)}
+.box.i{border-left:5px solid var(--azul)}
 .box span{font-size:1.4rem;line-height:1}
 .box p{color:var(--dim);font-size:.92rem}
 
 /* Fases */
-.phase{font-family:var(--display);font-weight:700;margin:2rem 0 .9rem;color:var(--ink);text-transform:uppercase;letter-spacing:.03em;font-size:.82rem;border-bottom:3px solid var(--personal);display:inline-block;padding-bottom:.2rem}
+.phase{font-family:var(--display);font-weight:700;margin:2rem 0 .9rem;color:var(--ink);text-transform:uppercase;letter-spacing:.03em;font-size:.82rem;border-bottom:3px solid var(--rosa);display:inline-block;padding-bottom:.2rem}
 
 /* Timeline de pasos */
 .tl{position:relative;margin:0;padding:0;list-style:none}
 .tl:before{content:"";position:absolute;left:24px;top:0;bottom:0;width:3px;background:rgba(13,16,32,.08);border-radius:4px}
 .st{position:relative;padding-left:64px;margin:0 0 .8rem}
 .ic{position:absolute;left:0;top:6px;width:50px;height:50px;border-radius:50%;background:var(--glass);border:3px solid var(--c);display:grid;place-items:center;font-size:1.4rem;backdrop-filter:blur(8px);box-shadow:0 6px 18px -10px var(--c);transition:background .3s,border-color .3s}
-.st.done .ic{background:var(--herramientas);border-color:var(--herramientas)}
-.st.now .ic{box-shadow:0 0 0 6px color-mix(in srgb,var(--personal) 40%,transparent);border-color:var(--personal)}
+.st.done .ic{background:var(--turquesa);border-color:var(--turquesa)}
+.st.now .ic{box-shadow:0 0 0 6px color-mix(in srgb,var(--rosa) 40%,transparent);border-color:var(--rosa)}
 .hd{width:100%;text-align:left;background:var(--glass);color:var(--ink);border:1px solid var(--edge);border-radius:22px;padding:.85rem 1.1rem;font:inherit;cursor:pointer;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 #fff inset,0 8px 24px -16px rgba(40,50,110,.3);transition:box-shadow .3s,border-color .3s;position:relative}
 .hd:hover{box-shadow:0 1px 0 #fff inset,0 18px 40px -18px var(--c)}
-.st.now .hd{border:2px solid var(--personal)}
+.st.now .hd{border:2px solid var(--rosa)}
 .n{font-size:.72rem;color:var(--dim);font-weight:500}
 .who{display:inline-block;font-size:.66rem;font-weight:600;padding:.15rem .55rem;border-radius:99px;color:#fff;background:var(--c);margin:0 6px 0 4px;letter-spacing:.02em}
 .t{font-family:var(--display);font-weight:500;display:block;margin-top:.25rem;color:var(--ink);font-size:.98rem;line-height:1.25;letter-spacing:-.01em}
 .s{color:var(--dim);font-size:.9rem;display:block;margin-top:.1rem}
-.hint,.chip{font-size:.76rem;color:var(--academico);margin-top:.25rem;display:inline-block;margin-right:10px;font-weight:600}
-.chip{color:var(--un);border-bottom:1px dotted var(--un);cursor:pointer}
+.hint,.chip{font-size:.76rem;color:var(--azul);margin-top:.25rem;display:inline-block;margin-right:10px;font-weight:600}
+.chip{color:var(--purpura);border-bottom:1px dotted var(--purpura);cursor:pointer}
 .more{display:none;margin:.4rem 0 0;padding:.9rem .6rem .9rem 1rem;background:var(--glass);border:1px dashed rgba(13,16,32,.15);border-radius:18px;backdrop-filter:blur(10px);overflow-x:auto}
 .st.open .more{display:block}
 .h{overflow-x:auto;padding:6px 0 10px}
@@ -129,9 +134,9 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,8vw,5.5rem)
 
 /* Popover de documentos de ejemplo */
 #pop{position:fixed;z-index:50;width:min(310px,calc(100vw - 24px));display:none;pointer-events:none;filter:drop-shadow(0 8px 20px rgba(0,0,0,.35))}
-.doc{position:relative;overflow:hidden;background:#fffdf7;color:#222;border:1px solid #c9b982;border-top:6px solid var(--academico);border-radius:12px;padding:12px 14px;font-size:.74rem;line-height:1.45}
-.doc .dh{display:block;text-align:center;font-family:var(--display);font-weight:500;font-size:.78rem;color:var(--academico);margin-bottom:.3rem}
-.doc .wm{position:absolute;right:-16px;top:40%;transform:rotate(-20deg);font-family:var(--display);font-weight:700;font-size:2rem;color:rgba(91,108,255,.1)}
+.doc{position:relative;overflow:hidden;background:#fffdf7;color:#222;border:1px solid #c9b982;border-top:6px solid var(--azul);border-radius:12px;padding:12px 14px;font-size:.74rem;line-height:1.45}
+.doc .dh{display:block;text-align:center;font-family:var(--display);font-weight:500;font-size:.78rem;color:var(--azul);margin-bottom:.3rem}
+.doc .wm{position:absolute;right:-16px;top:40%;transform:rotate(-20deg);font-family:var(--display);font-weight:700;font-size:2rem;color:rgba(54,162,235,.1)}
 .doc u{text-decoration:none;border-bottom:1px solid #888;padding:0 14px}
 .doc .nt{margin-top:8px;font-size:.66rem;color:#777;border-top:1px dashed #ccc;padding-top:4px}
 .ph{width:64px;height:80px;background:#fff;border:1px solid #bbb;margin:6px auto;display:grid;place-items:center;font-size:2rem;border-radius:6px}
@@ -161,12 +166,14 @@ footer a{color:var(--ink);font-weight:600;text-underline-offset:4px}
 <div class="fin">🎉 ¡Listo! Ya eres bachiller y puedes continuar con tu título profesional.</div>
 <footer>
   <span>© 2026 Oppwa · Guía UAC</span>
-  </footer>
+  <a href="https://github.com/oppwa" target="_blank" rel="noopener">Perfil de GitHub<span class="sr"> (abre en pestaña nueva)</span></a>
+</footer>
 </main></div>
 <div id="pop" role="tooltip"></div>
 
 <script>
-const C={al:"#9b1c31",fa:"#1f5fa8",un:"#7a4fb0",au:"#b86b00",gt:"#1f7a4d",su:"#2b2f3a"};
+// Responsables con la nueva paleta
+const C={al:"#FF6384",fa:"#36A2EB",un:"#9966FF",au:"#FF9F40",gt:"#4BC0C0",su:"#C9CBCF"};
 const D=(h,b)=>'<div class="doc"><div class="wm">EJEMPLO</div><b class="dh">'+h+'</b>'+b+'<div class="nt">Ejemplo referencial: el formato real puede variar un poco.</div></div>';
 const EX={
 foto:D("FOTOGRAFÍA PARA TU DIPLOMA",'<div class="ph">🧑‍💼</div>Fondo blanco · terno oscuro · formato JPG · rostro despejado.'),
@@ -178,7 +185,7 @@ rcu:D("RESOLUCIÓN DE CONSEJO UNIVERSITARIO",'<b>RESOLUCIÓN N.° ___-2026-CU-UA
 mail:D("CORREO QUE RECIBIRÁS",'<b>De:</b> Oficina de Grados y Títulos<br><b>Asunto:</b> Resolución de Consejo Universitario<br>Estimado(a) alumno(a): adjuntamos su resolución firmada digitalmente.<br>📎 Resolucion_CU.pdf<br><i>Revisa también tu bandeja de spam.</i>'),
 dip:D("DIPLOMA DE BACHILLER",'<div style="text-align:center">UNIVERSIDAD ANDINA DEL CUSCO<br>confiere el grado académico de<br><b style="font-size:.9rem">BACHILLER EN <u>————</u></b><br>a <u>Apellidos y nombres</u><br>Diploma N.° <u>___</u> · Código <u>___</u></div><div style="display:flex;justify-content:space-between;margin-top:10px;font-size:.62rem"><span>Decano(a)</span><span>Sec. General</span><span>Rector</span></div>'),
 ofi:D("OFICIO A SUNEDU",'<b>OFICIO N.° ___-2026-SG</b><br>Asunto: Remite padrón y diplomas para registro.<br>Adjuntos: 1) Padrón de expedientes · 2) Diplomas escaneados.<br>Firmado por la Secretaría General.'),
-erp:D("ERP · CONDICIÓN DEL ALUMNO",'Alumno: <u>Apellidos y nombres</u><br>Condición: <s>EGRESANTE</s> → <b style="color:#1f8a55">BACHILLER ✔</b><br>Observaciones: ninguna<br>Registro SUNEDU: <b>registrado</b>')};
+erp:D("ERP · CONDICIÓN DEL ALUMNO",'Alumno: <u>Apellidos y nombres</u><br>Condición: <s>EGRESANTE</s> → <b style="color:#4BC0C0">BACHILLER ✔</b><br>Observaciones: ninguna<br>Registro SUNEDU: <b>registrado</b>')};
 const P=[
 ["Fase 1 · Tu solicitud y los requisitos",null,[
 ["📝","al","ALUMNO","Solicitas el bachillerato","Inicias el trámite.",[]],
@@ -207,13 +214,14 @@ const P=[
 ["🏅","gt","OFICINA DE GRADOS Y TÍTULOS · ERP","Pasas de egresante a bachiller","Cuando SUNEDU registra tu diploma, se actualiza tu condición en el ERP.",["SUNEDU|Registra y comunica a la universidad","Verificación|Sin observaciones en tu expediente","ERP|Cambio de egresante a bachiller|erp","Después|Ya puedes solicitar el apto al título profesional"],"erp"]]]];
 const IC=[[/portad/i,"🗂️"],[/foto/i,"📷"],[/convalid/i,"🔁"],[/notas/i,"📊"],[/matr/i,"📅"],[/egres/i,"🎒"],[/requisit/i,"✅"],[/facultad/i,"🏛️"],[/oficio/i,"📨"],[/diploma/i,"📜"],[/consejo/i,"🏆"],[/autorid/i,"🖋️"],[/guard/i,"💾"],[/cierre/i,"🔒"],[/correo/i,"📧"],[/resoluc/i,"📄"],[/impres|escane/i,"🖨️"],[/decano|secretaria|rector/i,"✍️"],[/padr/i,"📋"],[/sunedu/i,"🏢"],[/env[ií]/i,"📤"],[/erp/i,"💻"],[/despu/i,"🎓"],[/reúne|agenda/i,"🗂️"],[/recibe/i,"📥"],[/revisa|verific/i,"🔎"],[/todo bien/i,"👍"],[/observ/i,"⚠️"],[/exposi/i,"🎤"],[/aprob/i,"🗳️"]];
 const ic=t=>(IC.find(r=>r[0].test(t))||[0,"⭐"])[1];
-const PAL=["#e8702a","#6fa595","#f2b705","#0a2e6e","#3a3f4b"];
+// Paleta cíclica solicitada para los diagramas
+const PAL=["#FF6384","#36A2EB","#FFCE56","#4BC0C0","#9966FF","#FF9F40","#C9CBCF"];
 const ex=e=>e?' data-ex="'+e+'"':'',chp=e=>e?'<br><span class="chip">👁 Ver ejemplo</span>':'';
-const s1=sb=>'<div class="s1" style="min-width:'+sb.length*150+'px">'+sb.map((x,i)=>{const[a,b,e]=x.split("|"),c=PAL[i%5],up=i%2,
+const s1=sb=>'<div class="s1" style="min-width:'+sb.length*150+'px">'+sb.map((x,i)=>{const[a,b,e]=x.split("|"),c=PAL[i%PAL.length],up=i%2,
  tx='<div class="tx"><b style="color:'+c+'">'+a+'</b><span>'+b+chp(e)+'</span></div>',
  st='<div class="stm" style="background:'+c+'"></div>',cc='<div class="cc" style="color:'+c+'">'+ic(a)+'</div>';
  return'<div class="sg"'+ex(e)+'><div class="z zt">'+(up?cc+st:tx)+'</div><div class="br" style="background:'+c+'"><i></i></div><div class="z zb">'+(up?tx:st+cc)+'</div></div>'}).join("")+'</div>';
-const s2=sb=>{const n=sb.length,h=Math.ceil(n/2),it=sb.map((x,i)=>{const[a,b,e]=x.split("|");return{a,b,e,i,c:"hsl("+Math.round(i/(n-1)*280)+" 72% 45%)"}}),A=it.slice(0,h),B=it.slice(h),pad=l=>'<div style="flex:1"></div>'.repeat(h-l.length),
+const s2=sb=>{const n=sb.length,h=Math.ceil(n/2),it=sb.map((x,i)=>{const[a,b,e]=x.split("|");return{a,b,e,i,c:PAL[i%PAL.length]}}),A=it.slice(0,h),B=it.slice(h),pad=l=>'<div style="flex:1"></div>'.repeat(h-l.length),
  bar=(l,r)=>l.map(o=>'<div class="ar'+(r?' rv':'')+'" style="background:'+o.c+'">'+(o.i+1)+'</div>').join("")+pad(l),
  cds=l=>l.map(o=>'<div class="cd"'+ex(o.e)+' style="border-top:4px solid '+o.c+'"><div class="cc2" style="background:'+o.c+'">'+ic(o.a)+'</div><b>'+o.a+'</b>'+o.b+chp(o.e)+'</div>').join("")+pad(l);
  return'<div class="s2"><div class="cr">'+cds(A)+'</div><div class="mid" style="--c1:'+A[h-1].c+';--c2:'+B[0].c+'"><div class="bw">'+bar(A,0)+'</div><div class="bw rw">'+bar(B,1)+'</div><div class="tn"></div></div><div class="cr rw">'+cds(B)+'</div></div>'};
